@@ -1,0 +1,60 @@
+
+
+nav{
+    height:60px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-image: linear-gradient(45deg, 
+    #33ebf8 0%, #506ef7 25%, #9d43f1 50%,#f74edb 75%, #f36098 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    font-weight: bold;
+}
+nav h1{
+    font-size: 35px;
+    font-family: 'Lovelo', sans-serif;
+    text-transform: uppercase;
+    cursor: default;
+}
+nav section{
+    display: inline-flex;
+    height: 60px;
+    justify-content: right;
+    align-items: end;
+    gap: 3px;
+    padding-right: 10px;
+}
+nav section div{
+    display: inline-block;
+    height: 15px;
+    padding: 10px;
+    cursor: pointer;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+nav section div a{
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav section div:nth-child(1){
+    background: #1a1a1a;
+    transition: 0.3s;
+}
+nav section div:nth-child(1) a{
+    color: rgb(255, 255, 255);
+}
+nav section div:hover{
+    background: rgba(58, 58, 58, 70%);
+    height: 20px;
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+nav section div:hover a{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    transition: 0.75s;
+}
