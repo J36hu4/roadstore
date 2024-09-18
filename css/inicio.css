@@ -1,5 +1,4 @@
 
-
 nav{
     height:60px;
     border-bottom-left-radius: 10px;
@@ -41,7 +40,7 @@ nav section div a{
     font-family: Arial, Helvetica, sans-serif;
 }
 nav section div:nth-child(1){
-    background: #1a1a1a;
+    background: #000000;
     transition: 0.3s;
 }
 nav section div:nth-child(1) a{
@@ -57,4 +56,45 @@ nav section div:hover a{
     color: rgb(255, 255, 255);
     font-size: 20px;
     transition: 0.75s;
+}
+
+div#cat {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Añadido para que los elementos se ajusten en varias filas si es necesario */
+}
+div#cat section {
+    height: 250px;
+    width: 200px;
+    border-radius: 20px;
+    background: linear-gradient(10deg, #000000, #181818, #272727);
+    justify-content: center;
+    padding: 10px;
+    position: relative; 
+    cursor: pointer;                                                                                                                         
+}
+div#cat section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background: linear-gradient(45deg, 
+    #33ebf8 0%, #506ef7 25%, #9d43f1 50%,#f74edb 75%, #f36098 100%);
+    z-index: -1; /* Coloca la sombra detrás del elemento */
+    filter: blur(15px); 
+}
+div#cat section h2 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    margin: auto;
+}
+div#cat section:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
 }
