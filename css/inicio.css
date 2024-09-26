@@ -1,73 +1,4 @@
 
-nav{
-    height:60px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    background-image: linear-gradient(45deg, 
-    #33ebf8 0%, #506ef7 25%, #9d43f1 50%,#f74edb 75%, #f36098 100%);
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 20px;
-    font-weight: bold;
-}
-nav h1{
-    margin: 10px;
-    position: absolute;
-    font-size: 35px;
-    font-family: 'Lovelo', sans-serif;
-    text-transform: uppercase;
-    cursor: default;
-}
-nav section{
-    float: right;
-    display: inline-flex;
-    height: 60px;
-    justify-content: right;
-    align-items: end;
-    gap: 3px;
-    padding-right: 10px;
-}
-nav section div{
-    display: inline-block;
-    height: 15px;
-    padding: 10px;
-    cursor: pointer;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-}
-nav section div a{
-    color: #1a1a1a;
-    text-decoration: none;
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-nav section div:nth-child(1){
-    background: #000000;
-    transition: 0.3s;
-}
-nav section div:nth-child(1) a{
-    color: rgb(255, 255, 255);
-}
-nav section div:hover{
-    background: rgba(58, 58, 58, 70%);
-    height: 20px;
-    transition: 0.3s;
-    transform: scale(1.1);
-}
-nav section div:hover a{
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-    transition: 0.75s;
-}
-nav .checkbox {
-    height: 20px;
-    width: 20px;
-    float: right;
-    margin: 20px 25px 20px auto;
-    cursor: pointer;
-    display: none;
-}
-
 div#cat {
     margin: 50px 20px 30px 20px;
     display: flex;
@@ -80,8 +11,9 @@ div#cat section {
     width: 200px;
     border-radius: 20px;
     background: linear-gradient(10deg, #000000, #181818, #272727);
+    display: flex;
     justify-content: center;
-    padding: 10px;
+    align-items: center;
     position: relative; 
     cursor: pointer;                                                                                                                         
 }
@@ -99,55 +31,73 @@ div#cat section::before {
     filter: blur(15px); 
 }
 div#cat section h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center ;
     text-align: center;
     color: white;
     font-weight: bold;
-    margin: auto;
+    top: 0;
+    z-index: 1;
+    background: #000000;
+    width: 95%;
+}
+div#cat section img {
+    position: absolute;
+    margin: 0;
+    width: 95%;
+    height: 95%;
+    object-fit: fill;
+    border-radius: 20px;
+    filter: grayscale(100%); 
+    transition: filter 0.3s ease; 
 }
 div#cat section:hover {
     transform: scale(1.1);
     transition: 0.3s;
 }
+div#cat section:hover img{
+    filter: grayscale(0%);
+}
 
-@media (max-width: 758px){
-    nav {
-        padding-left: 5px;
-        border-radius: 0px;
+#carrusel {
+    width: 400px;
+    height: auto;
+    margin: 80px auto;
+    overflow: hidden;
+    border-radius: 40px;
+    position: relative;
+} 
+#carrusel ul {
+    list-style: none;
+    display: flex;
+    animation: Carrusel 16s infinite alternate ease-in-out;
+}
+#carrusel ul img{
+    height: 500px;
+    width: 400px;
+}
+
+@media (max-width: 500px){
+    #carrusel {
+        width: 300px;
     }
-    nav .checkbox {
-        display: block;
+    #carrusel ul img{
+        width: 300px;
+        height: 400px;
     }
-    nav section{
-        position: absolute;
-        width: 100px;
-        height: auto;
-        background: linear-gradient(20deg, 
-        #33ebf8 0%, #506ef7 25%, #9d43f1 50%,#f74edb 75%, #f36098 100%);
-        top: 59px;
-        right: 0px;
-        z-index: 1;
-        border-bottom-left-radius: 20px;
-        padding-bottom: 10px;
-        display: none;
-    }
-    nav section div{
-        text-align: center;
-        height: 15px;
-        padding: 10px;
-        cursor: pointer;
-        border-top-right-radius: 20px;
-        border-top-left-radius: 20px;
-    }
-    nav section div {
-        height: 20px;
-        width: 70%;
-        border-radius: 0px;
-        margin: 5px auto 0px auto;
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
-    }
-    #check:checked ~ section{
-        display: block;
-        transition: 0.8s;
-    }
+}
+
+@keyframes Carrusel {
+    0%{transform: translateX(0%);}
+    20%{transform: translateX(0%);}
+
+    25%{transform: translateX(-100%);}
+    45%{transform: translateX(-100%);}
+    
+    50%{transform: translateX(-200%);}
+    70%{transform: translateX(-200%);}
+    
+    75%{transform: translateX(-300%);}
+    100%{transform: translateX(-300%);}
 }
